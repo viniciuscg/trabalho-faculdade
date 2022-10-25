@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUCar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../img/logonova.png" type="image/x-icon">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-dentro">
+            <div class="cabecalho-esquerda">
+                <a href="/home-page"><img src="../img/logonova.png" alt="logo do projeto"></a>
+                <div class="dropdown">
+                    <button class="dropbtn">Conheça o Projeto</button>
+                    <div class="dropdown-content">
+                      <a href="#" onclick="scrollToElement('sobre')">Sobre</a>
+                      <a href="#" onclick="scrollToElement('como-utilizar')">Como Utilizar</a>
+                      <a href="#" onclick="scrollToElement('seguranca')">Segurança</a>
+                      <a href="#" onclick="scrollToElement('financeiro')">Financeiro</a>
+                    </div>
+                </div>
+                <button onclick="scrollToElement('fale-conosco')">Fale Conosco</button>
+            </div>
+            <div class="cabecalho-direita" id="cabecalho-direita">
+                <button class="conheca-projeto" onclick="location.href='/login'" >Login</button>
+                <button class="conheca-projeto" onclick="location.href='/cadastro'">Cadastro</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="campo-de-busca">
+            <h1>Busque sua carona aqui no PUCar...</h1>
+            <div class="campo-de-busca-input-btn" style="display: flex;">
+                <input type="text" placeholder="Insira seu endereço" id="buscar">
+                <button><img src="../img/icon-use-jr.png" alt=""></button>
+                <button><img src="../img/icon-volante.png" alt=""></button>
+                <button onclick="buscar()"><img src="../img/lupa.png" alt=""></button>
+            </div>
+        </div>
+            <div class="sobre" id="sobre">
+                <img src="../img/sobre.png" alt="">
+                <div class="h1-p">
+                    <h1>Sobre</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.</p>
+                </div>
+            </div>
+            <div class="sobre sobre-claro" id="como-utilizar" >
+                <img src="../img/como-utilizar.png" alt="">
+                <div class="h1-p">
+                    <h1>Como utilizar</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.</p>
+                </div>
+            </div>
+            <div class="sobre" id="seguranca">
+                <img src="../img/segurança.png" alt="">
+                <div class="h1-p">
+                    <h1>Segurança</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.</p>
+                </div>
+            </div>
+            <div class="sobre sobre-claro" id="financeiro">
+                <img src="../img/financeiro.png" alt="">
+                <div class="h1-p">
+                    <h1>Financeiro</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
+                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.</p>
+                </div>
+            </div>
+        <footer>
+            <div class="rodape" id="fale-conosco">
+                <div class="redes-sociais">
+                    <a href="https://www.facebook.com" target="_blank"><img src="../img/facebook.png" alt=""></a>
+                    <a href="https://www.instagram.com/pucaronasolidaria/" target="_blank"><img src="../img/instagram.png" alt=""></a>
+                    <a href="https://twitter.com/home?lang=pt" target="_blank"><img src="../img/twitter.png" alt=""></a>
+                </div>
+                <div class="contatos">
+                    <h1>Contatos:</h1>
+                    <ul>pucaronasolidaria@outlook.com</ul>
+                    <p>(11) 98273-0000</p>
+                </div>
+                <p class="©">©2022 PUCar</p>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
