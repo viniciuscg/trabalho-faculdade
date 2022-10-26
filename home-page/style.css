@@ -9,9 +9,7 @@ html, body {
     font-family: "Poppins", sans-serif;
     padding: 0;
 }
-.sobre-claro {
-    background-color: #DAE3F3 !important;
-}
+
 .cabecalho {
     background-color: #4472C4;
     padding: 50px;
@@ -122,10 +120,15 @@ main {
     width: 100%;
     height: 30px;
 }
+.sobre-claro {
+    background-color: #DAE3F3 !important;
+}
+
 .sobre {
     background-color: #4472C4;
     padding-bottom: 50px;
     padding-top: 30px;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     padding-left: 20%;
