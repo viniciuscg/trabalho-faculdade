@@ -8,6 +8,7 @@ html, body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     padding: 0;
+    color: black;
 }
 .sobre-claro {
     background-color: #DAE3F3 !important;
@@ -18,7 +19,7 @@ html, body {
 }
 .cabecalho-dentro {
     background-color: #DAE3F3;
-    padding: 5px;
+    padding: 10px;
     width: 100%;
     display: flex;
     border-radius: 5px;
@@ -91,30 +92,25 @@ html, body {
 
 .campo-de-busca h1{
     font-size: 50px;
+    font-weight: 600;
 }
 main {
     height: 100%;
     display: flex;
+    background-color: #4472C4;
     flex-direction: column;
 }
-.campo-de-busca-input-btn img{
-    width: 15px;
-}
-.campo-de-busca-input-btn button{
-    cursor: pointer;
-    background-color: white;
-    border: 1px solid black;
+.campo-de-busca-input-btn select {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     border-left: 0px;
-    display: flex;
-    align-items: center;
-    padding: 4px;
 }
-.campo-de-busca-input-btn button:hover {background-color: #f1f1f1}
 
 .campo-de-busca-input-btn {
     width: 50%;
 }
 .campo-de-busca-input-btn input{
+    padding: 16px;
     padding-left: 5px;
     border: 1px solid black;
     border-top-left-radius: 5px;
@@ -123,41 +119,48 @@ main {
     height: 30px;
 }
 
-.container {
+.containerG {
     background-color: #DAE3F3;
     display: grid;
     grid-template-columns: 25% 25% 25%;
     justify-content: space-evenly;
     gap: 20px;
-    flex-grow: 1;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
 .usuario {
+    background-color:  #DAE3F3;
+    background-size: 100%;
     display: flex;
     flex-direction: column;
-    max-height: 300px;
     align-items: center;
-    padding: 10px;
+    text-align: center;
+    padding: 5px;
     border-radius: 5px;
     border: 3px solid black;
 }
 
+.usuario p {
+    margin: 2px;
+}
+
 .usuario img{  
     width: 150px;
+    border-radius: 100%;
 }
 
 .rodape {
     background-color: #4472C4;
+    padding-bottom: 50px;
     padding-top: 60px;
     display: flex;
     justify-content: center;
     padding-left: 20%;
+    padding-right: 20%;
     gap: 10px;
     flex-direction: column;
     align-items: center;
-    padding-right: 20%;
 }
 
 .rodape .contatos {
@@ -178,98 +181,9 @@ main {
 .© {
     font-size: 0.8em;
 }
-.previ-next {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: #DAE3F3;
-    gap: 10px;
-    padding-bottom: 30px;
-}
-.previ-next a {
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 2px;
-    padding: 8px 16px;
-}
-  
-.previ-next a:hover {
-    color: black;
-    transition: 0.25s;
-}
-  
-.previous {
-    background-color: #f1f1f1;
-    color: black;
-}
-  
-.next {
-    background-color: #4472C4;
-    color: white;
-}
-  
-.round {
-    border-radius: 50%;
+
+.cabecalhoP {
+    display: none;
 }
 
-@media (max-width: 768px){
-    .cabecalho {
-        padding: 15px;
-    }
 
-    .cabecalho-dentro {
-        padding: 0;
-    }
-
-    .cabecalho-dentro img, .cabecalho-dentro a{
-        display: none;
-    }
-
-    .cabecalho-esquerda {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .cabecalho-direita {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .campo-de-busca {
-        color: black;
-        text-align: center;
-    }
-
-    .container {
-        background-color: #DAE3F3;
-        display: grid;
-        grid-template-columns: 50px;
-        align-items: center;
-        justify-content: center;
-        gap: 90px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .container {
-        background-color: #DAE3F3;
-        display: flex;
-        flex-direction: column;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-    
-    .usuario {
-        background-color:  #DAE3F3;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        border-radius: 5px;
-        border: 3px solid black;
-    }
-    
-    .usuario img{  
-        width: 150px;
-    }
-}

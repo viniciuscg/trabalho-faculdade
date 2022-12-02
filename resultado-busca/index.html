@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUCar</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 799px)" href="style-p.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integriteuOxjzy="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="shortcut icon" href="../img/logonova.png" type="image/x-icon">
     <script src="script.js" defer></script>
 </head>
 <body>
+
     <header class="cabecalho">
         <div class="cabecalho-dentro">
             <div class="cabecalho-esquerda">
@@ -26,28 +30,67 @@
                 <button onclick="scrollToElement('fale-conosco')">Fale Conosco</button>
             </div>
             <div class="cabecalho-direita" id="cabecalho-direita">
-                <button onclick="location.href='/login'" >Login</button>
-                <button onclick="location.href='/cadastro'">Cadastro</button>
+                <button onclick="location.href='/Perfil'" >Perfil</button>
+                <button onclick="location.href='/home-page'">Sair</button>
             </div>
         </div>
     </header>
+
+    <header class="cabecalhoP">
+        <nav class="navbar navbar-expand-lg" id="expansion">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/home-page"><img src="../img/logonova.png" alt="logo nova" class="logonova"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" onclick="scrollToElement('fale-conosco')">Fale Conosco</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/perfil">Perfil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" onclick='sair()'>Sair</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Mais
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/home-page#sobre">Sobre</a></li>
+                      <li><a class="dropdown-item" href="/home-page#como-utilizar">Como Utilizar</a></li>
+                      <li><a class="dropdown-item" href="/home-page#seguranca">Segurança</a></li>
+                      <li><a class="dropdown-item" href="/home-page#financeiro">Financeiro</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled"></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+       </header>
+
     <main>
         <div class="campo-de-busca">
             <h1>Busque sua carona aqui no PUCar...</h1>
-            <div class="campo-de-busca-input-btn" style="display: flex;">
-                <input type="text" placeholder="Insira seu endereço" id="buscar">
-                <button><img src="../img/icon-use-jr.png" alt=""></button>
-                <button><img src="../img/icon-volante.png" alt=""></button>
-                <button onclick="buscar()"><img src="../img/lupa.png" alt=""></button>
-            </div>
+            <form class="campo-de-busca-input-btn" style="display: flex;" action="/resultado-busca/index.html" method="get">
+                <input name="bairro" type="text" placeholder="Insira seu bairro" id="buscar">
+                <select name="tipo" class="op">
+                    <option value="passageiro">Passageiro</option>
+                    <option value="motorista">Motorista</option>
+                </select>
+            </form>
         </div>
 
-        <div class="container"></div>
-        
-        <div class="previ-next">
-            <a href="/resultado-busca" class="previous">&laquo; Anterior</a>
-            <a href="/resultado-busca" class="next">Proxima &raquo;</a>
-        </div>
+        <div class="containerG"></div>
         
         <footer>
             <div class="rodape" id="fale-conosco">
@@ -65,5 +108,9 @@
             </div>
         </footer>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
 </body>
 </html>

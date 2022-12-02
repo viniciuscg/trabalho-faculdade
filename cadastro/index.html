@@ -22,7 +22,7 @@
 
             <div class="input-label">
                 <label for="email">E-mail</label>
-                <input id="email" type="text" placeholder="Digite seu e-mail">
+                <input id="email" type="text" placeholder="Digite seu e-mail" pattern="[A-Za-z0-9._%+-]+@gmail.com">
             </div>
 
             <div class="input-label">
@@ -46,7 +46,7 @@
             </div>
             
             <div class="input-label">
-                <label for="endereco">Endereço</label>
+                <label for="endereco">Bairro</label>
                 <input id="endereco" type="text" placeholder="Digite seu endereço">
             </div>
 
@@ -56,8 +56,12 @@
                 <input type="radio" value="motorista" name="tipo" id="motorista">
                 <label for="motorista">Motorista</label>
             </div>
-            <button onclick="cadastrar()">Cadastrar</button>
-        </div>
+            <div class="select">
+                <input type="checkbox" value="aceito" name="termo" id="termo">
+                <a href="termo.html" target="_blank">Aceito os termos de LGPD</a>
+            </div>
+            <button onclick="cadastrar()">Cadastrar</button>                   
+            </div>
     </main>
 </body>
 </html>

@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUCar</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 799px)" href="style-p.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integriteuOxjzy="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="shortcut icon" href="../img/logonova.png" type="image/x-icon">
     <script src="script.js" defer></script>
 </head>
 <body>
+
     <header class="cabecalho">
         <div class="cabecalho-dentro">
             <div class="cabecalho-esquerda">
@@ -31,54 +35,103 @@
             </div>
         </div>
     </header>
+
+    <header class="cabecalhoP">
+        <nav class="navbar navbar-expand-lg" id="expansion">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/home-page"><img src="../img/logonova.png" alt="logo nova" class="logonova"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" onclick="scrollToElement('fale-conosco')">Fale Conosco</a>
+                  </li>
+                  <li class="nav-item" id="perfil">
+                    <a class="nav-link" href="/login">Login</a>
+                  </li>
+                  <li class="nav-item" id="sair">
+                    <a class="nav-link" href="/cadastro">Cadastro</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Mais
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/home-page#sobre">Sobre</a></li>
+                      <li><a class="dropdown-item" href="/home-page#como-utilizar">Como Utilizar</a></li>
+                      <li><a class="dropdown-item" href="/home-page#seguranca">Segurança</a></li>
+                      <li><a class="dropdown-item" href="/home-page#financeiro">Financeiro</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled"></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+       </header>
+
     <main>
         <div class="campo-de-busca">
             <h1>Busque sua carona aqui no PUCar...</h1>
-            <div class="campo-de-busca-input-btn" style="display: flex;">
-                <input type="text" placeholder="Insira seu endereço" id="buscar">
-                <button><img src="../img/icon-use-jr.png" alt=""></button>
-                <button><img src="../img/icon-volante.png" alt=""></button>
-                <button onclick="buscar()"><img src="../img/lupa.png" alt=""></button>
-            </div>
+            <form class="campo-de-busca-input-btn" style="display: flex;" id="campo-busca-form" onsubmit="checknLogado()" method="get">
+                <input name="bairro" type="text" placeholder="Insira seu bairro" id="buscar">
+                <select name="tipo" class="op">
+                    <option value="passageiro">Passageiro</option>
+                    <option value="motorista">Motorista</option>
+                </select>
+            </form>
         </div>
             <div class="sobre" id="sobre">
                 <img src="../img/sobre.png" alt="">
                 <div class="h1-p">
                     <h1>Sobre</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.</p>
+                    <p>
+                        O PUCCar é uma aplicação web que irá facilitar a locomoção dos estudantes universitários da PUC Minas,
+                        possibilitando o serviço de carona entre os alunos, de forma fácil e segura.
+                        O propósito dessa aplicação é reduzir o trânsito, nos local da faculdade, economizar dirigindo e na 
+                        carona e o melhor de tudo com segurança.
+                    </p>
                 </div>
             </div>
             <div class="sobre sobre-claro" id="como-utilizar" >
                 <img src="../img/como-utilizar.png" alt="">
                 <div class="h1-p">
                     <h1>Como utilizar</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.</p>
+                    <p>
+                        Você precisa ser aluno da PUC Minas e ter um puc-mail ativo. 
+                        Preencha o cadastro com seu nome, puc-mail, matrícula, telefone, bairro e selecione a opção motorista ou passageiro! 
+                        Simples e fácil...
+                        <a href="/cadastro">Cadastre-se</a></span> agora e tenha a melhor experiência em aplicativos de carona.
+                    </p>
                 </div>
             </div>
             <div class="sobre" id="seguranca">
                 <img src="../img/segurança.png" alt="">
                 <div class="h1-p">
                     <h1>Segurança</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.</p>
+                    <p>
+                        Trabalhamos muito para que nossa plataforma seja a mais segura possível!
+                        Por isso nos adequamos a politica de LGPD para garantir ao nosso associado que todas as informações serão tratadas com privacidade.
+                        Ainda você pode contar com a segurança de estar andando com seu colega ou seja uma pessoa que você conhece ou pode vir a conhecer.
+                    </p>
                 </div>
             </div>
             <div class="sobre sobre-claro" id="financeiro">
                 <img src="../img/financeiro.png" alt="">
                 <div class="h1-p">
                     <h1>Financeiro</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.Lorem ipsum, dolor sit amet consectetur adipisicing elit. At illum nisi quae quam porro alias in voluptatibus voluptate
-                        exercitationem, dolorum aliquid id nobis harum laborum eius voluptas velit aut? Et.</p>
+                    <p>
+                        Cadastre-se como condutor e economize nos custos da viagem levando passageiros ou se preferir cadastre-se como passageiro e poupe dinheiro e tempo, pois na PUCar as tarifas são baixinhas para te ajudar, nesse momento de tanta dificuldade?
+                        Tarifas acessíveis e ainda pague como quiser, nossa plataforma trabalha com diversas formas de pagamento (cartão, PIX ou boleto) você escolhe!.
+                    </p>
                 </div>
             </div>
         <footer>
@@ -97,5 +150,8 @@
             </div>
         </footer>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 </body>
 </html>

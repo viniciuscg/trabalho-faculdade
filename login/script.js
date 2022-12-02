@@ -14,8 +14,7 @@ function logar() {
     alert('Usuário ou senha incorretos')
 }
 
-document.addEventListener('keypress', function(e){ //fazendo com que o item seja adicionado na lista ao pressionar ENTER
-    if (e.keyCode === 13){ //se Event.keycode for igual a 13 
-        logar()
+document.addEventListener('keypress', function(e){ 
+    if (e.keyCode === 13){ 
     }
 })

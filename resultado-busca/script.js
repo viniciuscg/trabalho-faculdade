@@ -1,18 +1,16 @@
-function buscar() {
-
-    window.location.href = "/resultado-busca";
-        
-}
-
 const users = JSON.parse(localStorage.getItem('users'))
-console.log(users);
-users.forEach(user => {
-    document.querySelector('.container').innerHTML += `
+
+const { tipo, bairro } = getUrlVars()
+const filteredUsers = users.filter(user => user.tipo === tipo && user.endereco.toLowerCase() === bairro.toLowerCase())
+
+filteredUsers.forEach(user => {
+    document.querySelector('.containerG').innerHTML += `
         <div class="usuario">
-            <img src="/img/icon-user.png" alt="">
+            <img src="${user.foto}" alt="">
             <h1>${user.nome}</h1>
             <p>${user.telefone}</p>
             <p>${user.endereco}</p>
+            <p class="tipo">${user.tipo}</p>
         </div>
     `
 });
@@ -25,17 +23,21 @@ function scrollToElement(id) {
     })
 }
 
-const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
-
-if (usuarioLogado) {
-    const cabecalhoDireita = document.getElementById('cabecalho-direita')
-    cabecalhoDireita.innerHTML = `
-        <button onclick='location.href = "/perfil"'>Perfil</button>
-        <button onclick='sair()'>Sair</button>
-    `
+function getUrlVars() {
+        let qs = location.search
+        qs = qs.split('+').join(' ');
+    
+        var params = {},
+            tokens,
+            re = /[?&]?([^=]+)=([^&]*)/g;
+    
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+        }
+        return params;
 }
 
 function sair() { 
     localStorage.setItem('usuarioLogado', null)
-    location.reload()
+    location.href = "/home-page"
 }

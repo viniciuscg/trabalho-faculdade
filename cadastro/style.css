@@ -86,3 +86,4 @@ a {
     font-family: Arial;
     cursor: pointer;
 }
+a:visited { color: black}
